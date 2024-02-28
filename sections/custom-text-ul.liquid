@@ -1,0 +1,56 @@
+<div>
+  <ul>
+    <li>{{ section.settings.text1 }}</li>
+    <li>{{ section.settings.text2 }}</li>
+    <li>{{ section.settings.text3 }}</li>
+    {% for block in section.blocks %}
+      <li>{{ block.settings.text }}</li>
+    {% endfor %}
+  </ul>
+</div>
+{% schema %}
+{
+  "name": "Custom Text UL",
+  "settings": [
+      {
+        "type":"text",
+        "id":"text1",
+        "label":"Text1",
+        "default":"Type your default Text"
+    },
+     {
+        "type":"text",
+        "id":"text2",
+        "label":"Text2",
+        "default":"Type your default Text"
+    },
+     {
+        "type":"text",
+        "id":"text3",
+        "label":"Text3",
+        "default":"Type your default Text"
+    }
+  ],
+  "blocks": [
+    {
+      "type":"text",
+      "name":"text",
+      "settings":[
+        {
+          "type":"text",
+          "id":"text",
+           "label":"Text",
+            "default": "输入文本"
+        }
+      ]
+    }
+  ],
+   "presets": [
+            {
+                "name": "Custon Text UL",
+                "category": "My Sections",
+                "blocks": []
+            }
+        ]
+}
+{% endschema %}
